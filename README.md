@@ -37,7 +37,7 @@ This repository provides a fully functional two-tier application for local DevOp
 ### 1. Clone and enter the project
 
 ```bash
-git clone <your-repo-url> two-tier-local
+git clone https://github.com/anbazhagan1804/two-tier-local two-tier-local
 cd two-tier-local
 ```
 
@@ -91,17 +91,17 @@ pytest -q
 ```text
 .
 +-- app/
-¦   +-- __init__.py
-¦   +-- db.py
-¦   +-- routes.py
-¦   +-- static/styles.css
-¦   +-- templates/index.html
+Â¦   +-- __init__.py
+Â¦   +-- db.py
+Â¦   +-- routes.py
+Â¦   +-- static/styles.css
+Â¦   +-- templates/index.html
 +-- db/init.sql
 +-- tests/test_health.py
 +-- scripts/
-¦   +-- setup-local-ubuntu.sh
-¦   +-- deploy.sh
-¦   +-- teardown.sh
+Â¦   +-- setup-local-ubuntu.sh
+Â¦   +-- deploy.sh
+Â¦   +-- teardown.sh
 +-- Dockerfile
 +-- docker-compose.yml
 +-- Jenkinsfile
