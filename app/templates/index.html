@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Two-Tier Local App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <main class="container">
+    <h1>Two-Tier Web App (Flask + MySQL)</h1>
+
+    <section class="card">
+      <h2>Add Message</h2>
+      <form method="post" action="{{ url_for('main.create_message') }}">
+        <input type="text" name="content" maxlength="255" placeholder="Enter a message" required />
+        <button type="submit">Save</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Messages</h2>
+      {% if messages %}
+      <ul>
+        {% for message in messages %}
+        <li>
+          <span>{{ message.content }}</span>
+          <small>{{ message.created_at }}</small>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No messages yet. Add the first one.</p>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>
